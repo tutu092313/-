@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 基础知识练习</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #1a1a2e;
+            color: #eee;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            text-align: center;
+            color: #4fc3f7;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #81d4fa;
+            border-left: 4px solid #4fc3f7;
+            padding-left: 12px;
+            margin: 25px 0 12px;
+            font-size: 1.2em;
+        }
+        h3 {
+            color: #b3e5fc;
+            margin: 15px 0 8px;
+            font-size: 1em;
+        }
+        .section {
+            background: #16213e;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-bottom: 16px;
+            border: 1px solid #0f3460;
+        }
+        .output-box {
+            background: #0a0a1a;
+            border: 1px solid #333;
+            border-radius: 4px;
+            padding: 10px 14px;
+            margin: 8px 0;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 13px;
+            white-space: pre-wrap;
+            color: #a5d6a7;
+            min-height: 24px;
+        }
+        .output-box::before {
+            content: '▶ 输出结果：';
+            color: #4fc3f7;
+            font-family: inherit;
+        }
+        .label {
+            color: #ce93d8;
+            font-size: 13px;
+            margin-bottom: 4px;
+        }
+        code {
+            color: #ffcc80;
+        }
+        .comment {
+            color: #888;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>JavaScript 基础知识练习</h1>
+
+<!-- ================================================
+     第一部分：变量的定义（var、let、const）
+     ================================================ -->
+<div class="section">
+    <h2>一、变量的定义（var、let、const）</h2>
+
+    <h3>1.1 var — 函数作用域（可重复声明，存在变量提升）</h3>
+    <div class="output-box" id="var-demo"></div>
+
+    <h3>1.2 let — 块级作用域（不可重复声明，无变量提升）</h3>
+    <div class="output-box" id="let-demo"></div>
+
+    <h3>1.3 const — 常量（块级作用域，声明时必须赋值，之后不能重新赋值）</h3>
+    <div class="output-box" id="const-demo"></div>
+</div>
+
+<!-- ================================================
+     第二部分：变量类型
+     ================================================ -->
+<div class="section">
+    <h2>二、变量类型</h2>
+
+    <h3>2.1 数字（Number）</h3>
+    <div class="output-box" id="type-number"></div>
+
+    <h3>2.2 字符串（String）</h3>
+    <div class="output-box" id="type-string"></div>
+
+    <h3>2.3 布尔（Boolean）</h3>
+    <div class="output-box" id="type-boolean"></div>
+
+    <h3>2.4 数组（Array）</h3>
+    <div class="output-box" id="type-array"></div>
+
+    <h3>2.5 对象（Object）</h3>
+    <div class="output-box" id="type-object"></div>
+
+    <h3>2.6 null 和 undefined</h3>
+    <div class="output-box" id="type-null-undefined"></div>
+
+    <h3>2.7 使用 typeof 检测类型</h3>
+    <div class="output-box" id="type-typeof"></div>
+</div>
+
+<!-- ================================================
+     第三部分：表达式
+     ================================================ -->
+<div class="section">
+    <h2>三、表达式</h2>
+
+    <h3>3.1 算术表达式</h3>
+    <div class="output-box" id="expr-arithmetic"></div>
+
+    <h3>3.2 比较表达式</h3>
+    <div class="output-box" id="expr-comparison"></div>
+
+    <h3>3.3 逻辑表达式</h3>
+    <div class="output-box" id="expr-logical"></div>
+
+    <h3>3.4 赋值表达式</h3>
+    <div class="output-box" id="expr-assignment"></div>
+</div>
+
+<!-- ================================================
+     第四部分：流程控制
+     ================================================ -->
+<div class="section">
+    <h2>四、流程控制</h2>
+
+    <h3>4.1 if-else 条件判断</h3>
+    <div class="output-box" id="control-ifelse"></div>
+
+    <h3>4.2 for 循环</h3>
+    <div class="output-box" id="control-for"></div>
+
+    <h3>4.3 while 循环</h3>
+    <div class="output-box" id="control-while"></div>
+
+    <h3>4.4 switch-case 多分支</h3>
+    <div class="output-box" id="control-switch"></div>
+</div>
+
+<!-- ================================================
+     第五部分：函数
+     ================================================ -->
+<div class="section">
+    <h2>五、函数</h2>
+
+    <h3>5.1 普通函数（函数声明）</h3>
+    <div class="output-box" id="func-normal"></div>
+
+    <h3>5.2 箭头函数（Arrow Function）</h3>
+    <div class="output-box" id="func-arrow"></div>
+
+    <h3>5.3 函数参数（默认参数、剩余参数）</h3>
+    <div class="output-box" id="func-params"></div>
+
+    <h3>5.4 函数返回值</h3>
+    <div class="output-box" id="func-return"></div>
+
+    <h3>5.5 匿名函数与函数表达式</h3>
+    <div class="output-box" id="func-anonymous"></div>
+</div>
+
+<script>
+// ================================================
+// 辅助函数：将内容同时输出到页面指定元素和控制台
+// ================================================
+function show(id, text) {
+    document.getElementById(id).textContent = text;
+    console.log('[' + id + ']', text);
+}
+
+// ================================================
+// 一、变量的定义
+// ================================================
+
+// --- var 演示 ---
+// var 是函数作用域，在函数内部声明的变量不会泄漏到块级作用域外
+// var 可以重复声明（后声明的值会覆盖前面的）
+// var 存在变量提升（hoisting），声明会被提升到函数顶部，但赋值不会
+(function demoVar() {
+    var a = 10;
+    var a = 20; // var 允许重复声明，这里覆盖了前面的 a
+    var result = 'var 演示：\n';
+    result += 'a = ' + a + '\n'; // 20
+
+    // 在块级作用域内用 var 声明的变量，泄漏到外部
+    if (true) {
+        var b = 30; // 这里的 b 泄漏到整个函数作用域
+    }
+    result += '块级作用域外的 b = ' + b + '（var 没有块级作用域）\n';
+
+    // 变量提升示例
+    result += '提升示例：提升后 c 的值是 ' + c + '（undefined，说明声明被提升但赋值没有）\n';
+    var c = 100;
+
+    show('var-demo', result.trim());
+})();
+
+// --- let 演示 ---
+// let 是块级作用域，只在当前的花括号 {} 内有效
+// let 不能在同一作用域内重复声明
+(function demoLet() {
+    let a = 10;
+    // let a = 20; // 错误：Identifier 'a' has already been declared
+
+    let result = 'let 演示：\n';
+    result += 'a = ' + a + '\n';
+
+    // 块级作用域
+    if (true) {
+        let b = 30; // 这里的 b 只在 if 块内有效
+        result += 'if 块内的 b = ' + b + '\n';
+    }
+    // result += '块级作用域外的 b = ' + b + '（这里访问会报错）\n';
+
+    // let 不存在变量提升——在声明之前访问会抛出 ReferenceError
+    // console.log(beforeLet); // ReferenceError
+    // let beforeLet = 50;
+    result += 'let 没有变量提升，声明前访问会报错（已注释避免脚本中断）\n';
+
+    // 计数器场景适合用 let
+    for (let i = 0; i < 3; i++) {
+        result += '循环中 i = ' + i + '\n';
+    }
+    // i 只在循环内有效，外部无法访问
+
+    show('let-demo', result.trim());
+})();
+
+// --- const 演示 ---
+// const 用于声明常量，声明时必须赋值，之后不能重新赋值
+// const 也是块级作用域
+(function demoConst() {
+    const PI = 3.14159;
+    const result = 'const 演示：\n';
+    result += 'PI = ' + PI + '\n';
+
+    // 基本类型不能修改，但对象和数组的属性可以修改
+    const person = { name: '张三', age: 18 };
+    result += '修改前 person = ' + JSON.stringify(person) + '\n';
+    person.age = 20; // 可以修改属性
+    result += '修改属性后 person.age = ' + person.age + '\n';
+    // person = {}; // 错误：不能重新赋值为另一个对象
+
+    const colors = ['红', '绿', '蓝'];
+    result += '数组 colors = ' + JSON.stringify(colors) + '\n';
+    colors.push('黄'); // 可以修改数组内容
+    result += '添加元素后 colors = ' + JSON.stringify(colors) + '\n';
+
+    show('const-demo', result.trim());
+})();
+
+// ================================================
+// 二、变量类型
+// ================================================
+
+// --- 2.1 数字 ---
+(function demoNumber() {
+    const result = '数字（Number）演示：\n';
+    const integer = 42;          // 整数
+    const floatNum = 3.14;      // 浮点数
+    const scientific = 2.5e3;    // 科学计数法（2.5 × 10³ = 2500）
+    const negative = -10;       // 负数
+
+    result += '整数：' + integer + '\n';
+    result += '浮点数：' + floatNum + '\n';
+    result += '科学计数法 2.5e3 = ' + scientific + '\n';
+    result += '负数：' + negative + '\n';
+    result += '0.1 + 0.2 = ' + (0.1 + 0.2) + '（浮点数精度问题）\n';
+
+    // 特殊值
+    result += '10 / 0 = ' + (10 / 0) + '（Infinity）\n';
+    result += 'Math.max() = ' + Math.max() + '（无参数返回 -Infinity）\n';
+    result += 'Math.sqrt(-1) = ' + Math.sqrt(-1) + '（NaN，非数字）\n';
+
+    show('type-number', result.trim());
+})();
+
+// --- 2.2 字符串 ---
+(function demoString() {
+    const result = '字符串（String）演示：\n';
+
+    // 三种定义方式
+    const s1 = '单引号字符串';
+    const s2 = "双引号字符串";
+    const s3 = `模板字符串 ${s1}，可以嵌入变量`; // 模板字符串（反引号）
+
+    result += s1 + '\n';
+    result += s2 + '\n';
+    result += s3 + '\n';
+
+    // 常用方法
+    const str = 'Hello, World!';
+    result += '\n常用方法：\n';
+    result += 'str.length = ' + str.length + '\n';
+    result += 'str.toUpperCase() = ' + str.toUpperCase() + '\n';
+    result += 'str.indexOf("World") = ' + str.indexOf('World') + '\n';
+    result += 'str.substring(0, 5) = ' + str.substring(0, 5) + '\n';
+    result += 'str.replace("World", "JavaScript") = ' + str.replace('World', 'JavaScript') + '\n';
+    result += '"Hello" + " " + "World" = ' + 'Hello' + ' ' + 'World' + '\n';
+
+    show('type-string', result.trim());
+})();
+
+// --- 2.3 布尔 ---
+(function demoBoolean() {
+    const result = '布尔（Boolean）演示：\n';
+
+    const isAdult = true;
+    const isStudent = false;
+
+    result += 'isAdult = ' + isAdult + '\n';
+    result += 'isStudent = ' + isStudent + '\n';
+
+    // 假值（falsy）：false、0、""、null、undefined、NaN
+    // 真值（truthy）：除了上述假值以外的值，包括空数组[]、空对象{}
+    result += '\n假值判断：\n';
+    result += 'Boolean(0) = ' + Boolean(0) + '（0 是假值）\n';
+    result += 'Boolean("") = ' + Boolean('') + '（空字符串是假值）\n';
+    result += 'Boolean(null) = ' + Boolean(null) + '（null 是假值）\n';
+    result += 'Boolean([]) = ' + Boolean([]) + '（空数组是真值）\n';
+    result += 'Boolean({}) = ' + Boolean({}) + '（空对象是真值）\n';
+
+    show('type-boolean', result.trim());
+})();
+
+// --- 2.4 数组 ---
+(function demoArray() {
+    const result = '数组（Array）演示：\n';
+
+    const fruits = ['苹果', '香蕉', '橙子'];
+    result += 'fruits = ' + JSON.stringify(fruits) + '\n';
+    result += 'fruits[0] = ' + fruits[0] + '\n';
+    result += 'fruits.length = ' + fruits.length + '\n';
+
+    // 常用方法
+    result += '\n常用方法：\n';
+    result += 'fruits.push("葡萄") → ' + fruits.push('葡萄') + '（返回新长度）\n';
+    result += 'fruits.pop() → ' + fruits.pop() + '（删除并返回最后一个元素）\n';
+    result += 'fruits.shift() → ' + fruits.shift() + '（删除并返回第一个元素）\n';
+    result += 'fruits.unshift("草莓") → ' + fruits.unshift('草莓') + '（返回新长度）\n';
+    result += 'fruits.indexOf("香蕉") = ' + fruits.indexOf('香蕉') + '\n';
+    result += 'fruits.includes("橙子") = ' + fruits.includes('橙子') + '\n';
+    result += 'fruits.slice(1, 2) = ' + JSON.stringify(fruits.slice(1, 2)) + '\n';
+    result += 'fruits.splice(1, 1, "猕猴桃") → 修改原数组\n';
+    fruits.splice(1, 1, '猕猴桃');
+    result += '修改后 fruits = ' + JSON.stringify(fruits) + '\n';
+
+    // 遍历
+    result += '\n遍历数组：\n';
+    let forEachStr = '';
+    fruits.forEach(function(item, index) {
+        forEachStr += '  [' + index + '] ' + item + '\n';
+    });
+    result += forEachStr;
+
+    // map
+    const numbers = [1, 2, 3];
+    const doubled = numbers.map(function(n) { return n * 2; });
+    result += 'map: [1,2,3] 乘以 2 = ' + JSON.stringify(doubled) + '\n';
+
+    // filter
+    const evens = numbers.filter(function(n) { return n % 2 === 0; });
+    result += 'filter: [1,2,3] 过滤偶数 = ' + JSON.stringify(evens) + '\n';
+
+    show('type-array', result.trim());
+})();
+
+// --- 2.5 对象 ---
+(function demoObject() {
+    const result = '对象（Object）演示：\n';
+
+    // 创建对象
+    const student = {
+        name: '李四',
+        age: 20,
+        grade: '大二',
+        scores: [85, 92, 78],
+        introduce: function() {
+            return '我叫' + this.name + '，今年' + this.age + '岁';
+        }
+    };
+
+    result += 'student = ' + JSON.stringify(student) + '\n';
+    // JSON.stringify 不会包含函数，introduce 方法会丢失
+
+    // 访问属性
+    result += '\n访问属性：\n';
+    result += 'student.name = ' + student.name + '\n';
+    result += 'student["age"] = ' + student['age'] + '\n';
+    result += 'student.scores[0] = ' + student.scores[0] + '\n';
+    result += 'student.introduce() = ' + student.introduce() + '\n';
+
+    // 添加、修改、删除属性
+    result += '\n动态修改：\n';
+    student.age = 21;          // 修改
+    student.major = '计算机';   // 添加新属性
+    result += 'student.age = 21, student.major = "计算机"\n';
+    result += '现在 student = ' + JSON.stringify(student) + '\n';
+    delete student.grade;       // 删除属性
+    result += 'delete student.grade 后，grade 属性已移除\n';
+
+    // Object.keys / values
+    result += '\nObject.keys(student) = ' + JSON.stringify(Object.keys(student)) + '\n';
+    result += 'Object.values(student) = ' + JSON.stringify(Object.values(student)) + '\n';
+
+    show('type-object', result.trim());
+})();
+
+// --- 2.6 null 和 undefined ---
+(function demoNullUndefined() {
+    const result = 'null 和 undefined 演示：\n';
+
+    // null：表示"没有值"，是主动赋值的
+    const emptyValue = null;
+
+    // undefined：表示"未定义"，是变量声明后未赋值的默认状态
+    let uninitialized;
+    // 也可以显式赋值为 undefined
+    const alsoUndefined = undefined;
+
+    result += 'null == undefined → ' + (null == undefined) + '（松散相等，值相等）\n';
+    result += 'null === undefined → ' + (null === undefined) + '（严格相等，类型不同）\n';
+    result += 'typeof null = ' + typeof null + '（历史 bug，结果是 "object"）\n';
+    result += 'typeof undefined = ' + typeof undefined + '\n';
+
+    result += '\n未初始化的变量：\n';
+    result += 'uninitialized = ' + uninitialized + '\n';
+    result += 'alsoUndefined = ' + alsoUndefined + '\n';
+
+    // 函数参数未传入时
+    function test(arg) {
+        return '参数 arg = ' + arg + '\n参数 arg === undefined → ' + (arg === undefined);
+    }
+    result += '\n函数参数：\n' + test();
+
+    show('type-null-undefined', result.trim());
+})();
+
+// --- 2.7 typeof 检测类型 ---
+(function demoTypeof() {
+    const result = 'typeof 操作符演示：\n';
+    result += 'typeof 42        = ' + typeof 42 + '\n';
+    result += 'typeof 3.14      = ' + typeof 3.14 + '\n';
+    result += 'typeof "你好"   = ' + typeof '你好' + '\n';
+    result += 'typeof true     = ' + typeof true + '\n';
+    result += 'typeof [1,2,3]  = ' + typeof [1, 2, 3] + '（数组也是 object）\n';
+    result += 'typeof {a:1}    = ' + typeof {a: 1} + '\n';
+    result += 'typeof null     = ' + typeof null + '（历史 bug）\n';
+    result += 'typeof undefined = ' + typeof undefined + '\n';
+    result += 'typeof function(){} = ' + typeof function(){} + '\n';
+    result += 'typeof NaN      = ' + typeof NaN + '（NaN 的类型是 number）\n';
+
+    // 更精确的数组检测
+    result += '\nArray.isArray([1,2,3]) = ' + Array.isArray([1, 2, 3]) + '\n';
+    result += 'Array.isArray({0:"a",length:1}) = ' + Array.isArray({0: 'a', length: 1}) + '\n';
+
+    show('type-typeof', result.trim());
+})();
+
+// ================================================
+// 三、表达式
+// ================================================
+
+// --- 3.1 算术表达式 ---
+(function demoArithmetic() {
+    const result = '算术表达式演示：\n';
+    const a = 10, b = 3;
+
+    result += 'a = ' + a + ', b = ' + b + '\n\n';
+    result += '加法：a + b = ' + (a + b) + '\n';
+    result += '减法：a - b = ' + (a - b) + '\n';
+    result += '乘法：a * b = ' + (a * b) + '\n';
+    result += '除法：a / b = ' + (a / b) + '\n';
+    result += '取余：a % b = ' + (a % b) + '\n';
+    result += '幂运算：a ** 2 = ' + (a ** 2) + '\n';
+
+    result += '\n自增自减：\n';
+    let c = 5;
+    result += 'c = ' + c + '\n';
+    result += 'c++ 后置 = ' + (c++) + ', 现在 c = ' + c + '\n';
+    result += '++c 前置 = ' + (++c) + ', 现在 c = ' + c + '\n';
+    result += 'c-- 后置 = ' + (c--) + ', 现在 c = ' + c + '\n';
+    result += '--c 前置 = ' + (--c) + ', 现在 c = ' + c + '\n';
+
+    result += '\n复合赋值：\n';
+    let x = 10;
+    result += 'x = ' + x + '\n';
+    x += 5; result += 'x += 5 → ' + x + '\n';
+    x -= 3; result += 'x -= 3 → ' + x + '\n';
+    x *= 2; result += 'x *= 2 → ' + x + '\n';
+    x /= 4; result += 'x /= 4 → ' + x + '\n';
+
+    show('expr-arithmetic', result.trim());
+})();
+
+// --- 3.2 比较表达式 ---
+(function demoComparison() {
+    const result = '比较表达式演示：\n';
+
+    result += '松散比较（==，会自动转换类型）：\n';
+    result += '5 == "5"     → ' + (5 == "5") + '（字符串转数字）\n';
+    result += '0 == false   → ' + (0 == false) + '（false 转 0）\n';
+    result += 'null == undefined → ' + (null == undefined) + '\n';
+    result += '"1" == true  → ' + ("1" == true) + '\n';
+
+    result += '\n严格比较（===，不转换类型）：\n';
+    result += '5 === "5"    → ' + (5 === "5") + '（类型不同）\n';
+    result += '0 === false  → ' + (0 === false) + '（类型不同）\n';
+    result += 'null === undefined → ' + (null === undefined) + '\n';
+    result += '"1" === true → ' + ("1" === true) + '（类型不同）\n';
+
+    result += '\n大小比较：\n';
+    result += '3 > 5  → ' + (3 > 5) + '\n';
+    result += '3 < 5  → ' + (3 < 5) + '\n';
+    result += '3 >= 3 → ' + (3 >= 3) + '\n';
+    result += '"abc" < "def" → ' + ("abc" < "def") + '（字典序）\n';
+    result += '"apple" < "banana" → ' + ("apple" < "banana") + '\n';
+
+    result += '\n建议：始终使用严格比较（=== 或 !==），避免类型转换带来的意外结果\n';
+
+    show('expr-comparison', result.trim());
+})();
+
+// --- 3.3 逻辑表达式 ---
+(function demoLogical() {
+    const result = '逻辑表达式演示：\n';
+
+    // 逻辑与 &&
+    result += '逻辑与（&&）：\n';
+    result += 'true && true   → ' + (true && true) + '\n';
+    result += 'true && false  → ' + (true && false) + '\n';
+    result += 'false && true  → ' + (false && true) + '（短路，左边为 false，直接返回左值）\n';
+    result += '0 && "hello"   → ' + (0 && 'hello') + '（0 是假值，返回 0）\n';
+    result += '"a" && "b"     → ' + ('a' && 'b') + '（两个都是真值，返回最后一个）\n';
+
+    // 逻辑或 ||
+    result += '\n逻辑或（||）：\n';
+    result += 'false || false → ' + (false || false) + '\n';
+    result += 'true || false  → ' + (true || false) + '\n';
+    result += 'false || true  → ' + (false || true) + '（短路，左边为 true，直接返回左值）\n';
+    result += '0 || "default" → ' + (0 || 'default') + '（0 是假值，返回 "default"）\n';
+    result += '"" || "备用"   → ' + ('' || '备用') + '（空字符串是假值）\n';
+
+    // 逻辑非 !
+    result += '\n逻辑非（!）：\n';
+    result += '!true  → ' + (!true) + '\n';
+    result += '!false → ' + (!false) + '\n';
+    result += '!!true → ' + (!!true) + '（双重否定转布尔）\n';
+
+    // 短路求值应用
+    result += '\n短路求值应用：\n';
+    let name;
+    const displayName = name || '匿名用户';
+    result += 'name 未定义，name || "匿名用户" = "' + displayName + '"\n';
+
+    // 三元运算符
+    result += '\n三元运算符（条件 ? 值1 : 值2）：\n';
+    const age = 20;
+    const category = age >= 18 ? '成年人' : '未成年人';
+    result += 'age = ' + age + ' → ' + category + '\n';
+
+    show('expr-logical', result.trim());
+})();
+
+// --- 3.4 赋值表达式 ---
+(function demoAssignment() {
+    const result = '赋值表达式演示：\n';
+
+    // 基本赋值
+    let x = 10;
+    result += 'x = 10 → x = ' + x + '\n';
+
+    // 复合赋值
+    result += '\n复合赋值：\n';
+    x = 5;
+    x += 3;  result += 'x = 5; x += 3  → x = ' + x + '\n';
+    x -= 2;  result += 'x = 8; x -= 2  → x = ' + x + '\n';
+    x *= 4;  result += 'x = 6; x *= 4  → x = ' + x + '\n';
+    x /= 2;  result += 'x = 24; x /= 2 → x = ' + x + '\n';
+    x %= 5;  result += 'x = 12; x %= 5 → x = ' + x + '\n';
+    x **= 2; result += 'x = 2; x **= 2 → x = ' + x + '\n';
+
+    // 链式赋值（从右到左）
+    result += '\n链式赋值：\n';
+    let a, b, c;
+    a = b = c = 100;
+    result += 'a = b = c = 100 → a = ' + a + ', b = ' + b + ', c = ' + c + '\n';
+
+    // 解构赋值
+    result += '\n解构赋值：\n';
+    const arr = [1, 2, 3];
+    const [first, second, third] = arr;
+    result += 'const [first, second, third] = [1, 2, 3]\n';
+    result += 'first = ' + first + ', second = ' + second + ', third = ' + third + '\n';
+
+    const obj = { name: '王五', age: 25 };
+    const { name: personName, age: personAge } = obj;
+    result += 'const { name: personName, age: personAge } = obj\n';
+    result += 'personName = ' + personName + ', personAge = ' + personAge + '\n';
+
+    show('expr-assignment', result.trim());
+})();
+
+// ================================================
+// 四、流程控制
+// ================================================
+
+// --- 4.1 if-else ---
+(function demoIfElse() {
+    const result = 'if-else 条件判断演示：\n';
+
+    // 基本 if
+    const score = 85;
+    result += 'score = ' + score + '\n';
+
+    if (score >= 90) {
+        result += '评定等级：优秀\n';
+    }
+
+    // if-else
+    if (score >= 90) {
+        result += '优秀\n';
+    } else {
+        result += '其他\n';
+    }
+
+    // if-else if-else
+    let grade;
+    if (score >= 90) {
+        grade = 'A';
+    } else if (score >= 80) {
+        grade = 'B';
+    } else if (score >= 70) {
+        grade = 'C';
+    } else if (score >= 60) {
+        grade = 'D';
+    } else {
+        grade = 'F';
+    }
+    result += 'if-else if-else 链：score = ' + score + ' → 等级 ' + grade + '\n';
+
+    // 嵌套 if
+    const age = 25;
+    const hasTicket = true;
+    result += '\nage = ' + age + ', hasTicket = ' + hasTicket + '\n';
+    if (age >= 18) {
+        if (hasTicket) {
+            result += '可以观看电影\n';
+        } else {
+            result += '需要购买电影票\n';
+        }
+    } else {
+        result += '年龄未满18岁，需家长陪同\n';
+    }
+
+    // 逻辑运算符结合
+    const isLoggedIn = true;
+    const isPremium = true;
+    if (isLoggedIn && isPremium) {
+        result += '会员用户，享受全部功能\n';
+    } else if (isLoggedIn) {
+        result += '普通登录用户\n';
+    } else {
+        result += '未登录用户\n';
+    }
+
+    show('control-ifelse', result.trim());
+})();
+
+// --- 4.2 for 循环 ---
+(function demoFor() {
+    const result = 'for 循环演示：\n';
+
+    // 基本 for 循环
+    result += '基本 for 循环（1-5 的和）：\n';
+    let sum = 0;
+    for (let i = 1; i <= 5; i++) {
+        sum += i;
+    }
+    result += 'sum = ' + sum + '\n';
+
+    // for 循环遍历数组
+    result += '\n遍历数组：\n';
+    const fruits = ['苹果', '香蕉', '橙子'];
+    let fruitStr = '';
+    for (let i = 0; i < fruits.length; i++) {
+        fruitStr += '  ' + i + ': ' + fruits[i] + '\n';
+    }
+    result += fruitStr;
+
+    // for...of 循环（遍历可迭代对象，获取值）
+    result += 'for...of 循环：\n';
+    let ofStr = '';
+    for (const fruit of fruits) {
+        ofStr += '  ' + fruit + '\n';
+    }
+    result += ofStr;
+
+    // for...in 循环（遍历对象属性或数组索引）
+    result += 'for...in 循环（数组）：\n';
+    let inStr = '';
+    for (const index in fruits) {
+        inStr += '  index=' + index + ', value=' + fruits[index] + '\n';
+    }
+    result += inStr;
+
+    // for...in 遍历对象
+    result += 'for...in 循环（对象）：\n';
+    const person = { name: '赵六', age: 30, city: '北京' };
+    let objStr = '';
+    for (const key in person) {
+        objStr += '  ' + key + ': ' + person[key] + '\n';
+    }
+    result += objStr;
+
+    // break 和 continue
+    result += 'break 示例（找到第一个偶数）：\n';
+    let breakStr = '';
+    for (let i = 1; i <= 10; i++) {
+        if (i % 2 === 0) {
+            breakStr += '  找到第一个偶数：' + i + '，退出循环\n';
+            break;
+        }
+    }
+    result += breakStr;
+
+    result += 'continue 示例（只打印奇数）：\n';
+    let continueStr = '';
+    for (let i = 1; i <= 5; i++) {
+        if (i % 2 === 0) {
+            continue; // 跳过偶数
+        }
+        continueStr += '  ' + i + '\n';
+    }
+    result += continueStr;
+
+    // 双重循环
+    result += '双重循环（九九乘法表前4行）：\n';
+    let multiStr = '';
+    for (let i = 1; i <= 4; i++) {
+        let row = '';
+        for (let j = 1; j <= i; j++) {
+            row += i + '×' + j + '=' + (i * j) + '\t';
+        }
+        multiStr += '  ' + row.trim() + '\n';
+    }
+    result += multiStr;
+
+    show('control-for', result.trim());
+})();
+
+// --- 4.3 while 循环 ---
+(function demoWhile() {
+    const result = 'while 循环演示：\n';
+
+    // 基本 while
+    let countdown = 5;
+    result += '倒计时：\n';
+    while (countdown > 0) {
+        result += '  ' + countdown + '\n';
+        countdown--;
+    }
+    result += '  发射！\n';
+
+    // while 遍历数组
+    result += '\n遍历数组（while）：\n';
+    const colors = ['红', '绿', '蓝'];
+    let index = 0;
+    let whileStr = '';
+    while (index < colors.length) {
+        whileStr += '  ' + colors[index] + '\n';
+        index++;
+    }
+    result += whileStr;
+
+    // do-while（至少执行一次）
+    result += '\ndo-while（先执行再判断，至少执行一次）：\n';
+    let num = 1;
+    let doWhileStr = '';
+    do {
+        doWhileStr += '  第 ' + num + ' 次\n';
+        num++;
+    } while (num <= 3);
+    result += doWhileStr;
+
+    // 无限循环配合 break
+    result += '\n无限循环 + break：\n';
+    let breakNum = 0;
+    let infLoopStr = '';
+    while (true) {
+        breakNum++;
+        if (breakNum > 5) {
+            infLoopStr += '  已执行 5 次，退出\n';
+            break;
+        }
+        infLoopStr += '  正在执行第 ' + breakNum + ' 次\n';
+    }
+    result += infLoopStr;
+
+    show('control-while', result.trim());
+})();
+
+// --- 4.4 switch-case ---
+(function demoSwitch() {
+    const result = 'switch-case 多分支演示：\n';
+
+    // 基本 switch
+    const day = 3;
+    result += 'day = ' + day + ' → switch 判断：\n';
+    let dayName;
+    switch (day) {
+        case 1:
+            dayName = '星期一';
+            break;
+        case 2:
+            dayName = '星期二';
+            break;
+        case 3:
+            dayName = '星期三';
+            break;
+        case 4:
+            dayName = '星期四';
+            break;
+        case 5:
+            dayName = '星期五';
+            break;
+        case 6:
+            dayName = '星期六';
+            break;
+        case 7:
+            dayName = '星期日';
+            break;
+        default:
+            dayName = '无效的日期';
+    }
+    result += '  今天是：' + dayName + '\n';
+
+    // 多个 case 合并（不写 break）
+    result += '\n多个 case 合并（相邻 case 不 break）：\n';
+    const grade = 'B';
+    let scholarship;
+    switch (grade) {
+        case 'A':
+        case 'B':
+            scholarship = '可申请一等奖学金';
+            break;
+        case 'C':
+            scholarship = '可申请二等奖学金';
+            break;
+        default:
+            scholarship = '无奖学金';
+    }
+    result += '  grade = "' + grade + '" → ' + scholarship + '\n';
+
+    // switch 使用严格比较 ===
+    result += '\nswitch 使用严格比较（===）：\n';
+    const val = '1'; // 字符串
+    switch (val) {
+        case 1: // 数字 1，不会匹配
+            result += '  匹配到数字 1（不执行）\n';
+            break;
+        case '1': // 字符串 '1'，匹配
+            result += '  匹配到字符串 "1"\n';
+            break;
+    }
+
+    // 表达式 switch（使用括号）
+    result += '\n带表达式的 switch：\n';
+    const a = 10, b = 5;
+    let op = '+';
+    let exprResult;
+    switch (op) {
+        case '+':
+            exprResult = a + b;
+            break;
+        case '-':
+            exprResult = a - b;
+            break;
+        case '*':
+            exprResult = a * b;
+            break;
+        case '/':
+            exprResult = a / b;
+            break;
+        default:
+            exprResult = '未知运算符';
+    }
+    result += '  a = ' + a + ', op = "' + op + '", b = ' + b + ' → ' + exprResult + '\n';
+
+    show('control-switch', result.trim());
+})();
+
+// ================================================
+// 五、函数
+// ================================================
+
+// --- 5.1 普通函数（函数声明）---
+(function demoNormalFunc() {
+    const result = '普通函数（函数声明）演示：\n';
+
+    // 基本函数声明
+    function greet(name) {
+        return '你好，' + name + '！';
+    }
+    result += 'greet("小明") = ' + greet('小明') + '\n';
+
+    // 多参数函数
+    function add(a, b) {
+        return a + b;
+    }
+    result += 'add(3, 5) = ' + add(3, 5) + '\n';
+
+    // 无返回值函数
+    function printSum(a, b) {
+        console.log('printSum 内部：' + (a + b));
+        // 没有 return 语句，返回 undefined
+    }
+    const printResult = printSum(10, 20);
+    result += 'printSum(10, 20) 返回值 = ' + printResult + '\n';
+
+    // 函数提升（函数声明会提升，可以在定义之前调用）
+    result += '\n函数提升：sayHello 可以在声明前调用\n';
+    result += 'sayHello("提升") = ' + sayHello('提升') + '\n';
+    function sayHello(name) {
+        return 'Hello, ' + name;
+    }
+
+    // 内部函数（闭包基础）
+    result += '\n内部函数：\n';
+    function outer() {
+        const outerVar = '外层变量';
+        function inner() {
+            const innerVar = '内层变量';
+            return '内层可以访问外层的：' + outerVar;
+        }
+        return inner();
+    }
+    result += 'outer() = ' + outer() + '\n';
+
+    show('func-normal', result.trim());
+})();
+
+// --- 5.2 箭头函数 ---
+(function demoArrowFunc() {
+    const result = '箭头函数（Arrow Function）演示：\n';
+
+    // 基本语法
+    const add = (a, b) => a + b;
+    result += 'const add = (a, b) => a + b\n';
+    result += 'add(3, 5) = ' + add(3, 5) + '\n';
+
+    // 单参数可以省略圆括号
+    const double = n => n * 2;
+    result += '\nconst double = n => n * 2\n';
+    result += 'double(7) = ' + double(7) + '\n';
+
+    // 无参数箭头函数
+    const getRandom = () => Math.random().toFixed(2);
+    result += 'const getRandom = () => Math.random().toFixed(2)\n';
+    result += 'getRandom() = ' + getRandom() + '\n';
+
+    // 多行箭头函数（需要 return）
+    const calc = (a, b) => {
+        const sum = a + b;
+        const product = a * b;
+        return { sum: sum, product: product };
+    };
+    result += '\n多行箭头函数，返回对象：\n';
+    result += 'calc(3, 4) = ' + JSON.stringify(calc(3, 4)) + '\n';
+
+    // 箭头函数的 this 特性
+    result += '\n箭头函数 this 指向（箭头函数不绑定自己的 this）：\n';
+    const personObj = {
+        name: '箭头函数 person',
+        regularMethod: function() {
+            return this.name;
+        },
+        arrowMethod: () => {
+            return this.name;
+        }
+    };
+    result += 'person.regularMethod() = ' + personObj.regularMethod() + '\n';
+    result += 'person.arrowMethod() = ' + personObj.arrowMethod() + '（箭头函数 this 指向外层，这里是 window）\n';
+
+    // 箭头函数没有 arguments 对象
+    result += '\n箭头函数没有 arguments（使用剩余参数替代）：\n';
+    const sumAll = (...nums) => {
+        let total = 0;
+        for (const n of nums) {
+            total += n;
+        }
+        return total;
+    };
+    result += 'sumAll(1, 2, 3, 4, 5) = ' + sumAll(1, 2, 3, 4, 5) + '\n';
+
+    show('func-arrow', result.trim());
+})();
+
+// --- 5.3 函数参数 ---
+(function demoFuncParams() {
+    const result = '函数参数（默认参数、剩余参数）演示：\n';
+
+    // 默认参数
+    function greet(name = '访客', greeting = '你好') {
+        return greeting + '，' + name + '！';
+    }
+    result += '默认参数：\n';
+    result += 'greet() = ' + greet() + '\n';
+    result += 'greet("小明") = ' + greet('小明') + '\n';
+    result += 'greet("小红", "早上好") = ' + greet('小红', '早上好') + '\n';
+
+    // 剩余参数（Rest Parameters）
+    function sum(...numbers) {
+        return numbers.reduce((acc, n) => acc + n, 0);
+    }
+    result += '\n剩余参数（...）：\n';
+    result += 'sum(1, 2, 3) = ' + sum(1, 2, 3) + '\n';
+    result += 'sum(10, 20, 30, 40, 50) = ' + sum(10, 20, 30, 40, 50) + '\n';
+
+    // arguments 对象（普通函数才有）
+    function showArgs() {
+        // arguments 是类数组对象，不是真正的数组
+        return Array.from(arguments).join(', ');
+    }
+    result += '\narguments 对象（普通函数才有）：\n';
+    result += 'showArgs("a", "b", "c") = ' + showArgs('a', 'b', 'c') + '\n';
+
+    // 参数解构
+    function introduce({ name, age, city = '未知' }) {
+        return '我叫' + name + '，今年' + age + '岁，来自' + city;
+    }
+    result += '\n参数解构：\n';
+    result += 'introduce({ name: "赵七", age: 28, city: "上海" }) = ' + introduce({ name: '赵七', age: 28, city: '上海' }) + '\n';
+
+    // 数组参数解构
+    function getFirstTwo([first, second]) {
+        return '第一个：' + first + '，第二个：' + second;
+    }
+    result += 'getFirstTwo(["红", "绿", "蓝"]) = ' + getFirstTwo(['红', '绿', '蓝']) + '\n';
+
+    // 回调函数
+    result += '\n回调函数：\n';
+    function processData(data, callback) {
+        const processed = data.map(callback);
+        return processed;
+    }
+    const nums = [1, 2, 3];
+    const squared = processData(nums, n => n * n);
+    result += 'processData([1,2,3], n => n*n) = ' + JSON.stringify(squared) + '\n';
+
+    show('func-params', result.trim());
+})();
+
+// --- 5.4 函数返回值 ---
+(function demoFuncReturn() {
+    const result = '函数返回值演示：\n';
+
+    // 基本返回值
+    function multiply(a, b) {
+        return a * b;
+    }
+    result += 'multiply(4, 5) = ' + multiply(4, 5) + '\n';
+
+    // 提前返回
+    function findFirstEven(arr) {
+        for (const item of arr) {
+            if (item % 2 === 0) {
+                return '找到第一个偶数：' + item;
+            }
+        }
+        return '数组中没有偶数';
+    }
+    result += '\n提前返回：\n';
+    result += 'findFirstEven([1, 3, 5, 7, 8, 9]) = ' + findFirstEven([1, 3, 5, 7, 8, 9]) + '\n';
+    result += 'findFirstEven([1, 3, 5, 7, 9]) = ' + findFirstEven([1, 3, 5, 7, 9]) + '\n';
+
+    // 返回多个值（使用数组或对象）
+    function getMinMax(arr) {
+        return {
+            min: Math.min(...arr),
+            max: Math.max(...arr)
+        };
+    }
+    result += '\n返回对象（多个值）：\n';
+    const range = getMinMax([3, 1, 4, 1, 5, 9, 2, 6]);
+    result += 'getMinMax([3,1,4,1,5,9,2,6]) = ' + JSON.stringify(range) + '\n';
+
+    // 返回函数（高阶函数）
+    function createMultiplier(factor) {
+        return function(number) {
+            return number * factor;
+        };
+    }
+    result += '\n返回函数（闭包）：\n';
+    const double = createMultiplier(2);
+    const triple = createMultiplier(3);
+    result += 'createMultiplier(2) 返回一个函数，double(5) = ' + double(5) + '\n';
+    result += 'createMultiplier(3) 返回一个函数，triple(5) = ' + triple(5) + '\n';
+
+    // 立即调用函数表达式（IIFE）
+    result += '\nIIFE（立即调用函数表达式）：\n';
+    const iifeResult = (function(x, y) {
+        return x + y;
+    })(10, 20);
+    result += '(function(x, y) { return x + y; })(10, 20) = ' + iifeResult + '\n';
+
+    show('func-return', result.trim());
+})();
+
+// --- 5.5 匿名函数与函数表达式 ---
+(function demoAnonymous() {
+    const result = '匿名函数与函数表达式演示：\n';
+
+    // 函数表达式（将函数赋值给变量）
+    const square = function(n) {
+        return n * n;
+    };
+    result += '函数表达式：\n';
+    result += 'const square = function(n) { return n * n; }\n';
+    result += 'square(6) = ' + square(6) + '\n';
+
+    // 匿名函数作为回调
+    result += '\n匿名函数作为回调：\n';
+    const numbers = [5, 2, 8, 1, 9];
+    const sorted = numbers.slice().sort(function(a, b) {
+        return a - b; // 升序排列
+    });
+    result += '[5,2,8,1,9] 排序后 = ' + JSON.stringify(sorted) + '\n';
+
+    // 匿名函数立即执行
+    result += '\n匿名函数立即执行：\n';
+    const initResult = (function() {
+        const message = '初始化完成';
+        return message;
+    })();
+    result += '立即执行结果：' + initResult + '\n';
+
+    // 方法中的匿名函数
+    result += '\n对象方法（匿名函数）：\n';
+    const calculator = {
+        value: 10,
+        add: function(n) {
+            this.value += n;
+            return this;
+        },
+        multiply: function(n) {
+            this.value *= n;
+            return this; // 返回 this 实现链式调用
+        },
+        getValue: function() {
+            return this.value;
+        }
+    };
+    result += 'calculator.add(5).multiply(2).getValue() = ' + calculator.add(5).multiply(2).getValue() + '\n';
+
+    // 箭头函数作为函数表达式
+    result += '\n箭头函数表达式：\n';
+    const divide = (a, b) => {
+        if (b === 0) {
+            return '不能除以零';
+        }
+        return a / b;
+    };
+    result += 'divide(10, 3) = ' + divide(10, 3) + '\n';
+    result += 'divide(10, 0) = ' + divide(10, 0) + '\n';
+
+    show('func-anonymous', result.trim());
+})();
+
+// ================================================
+// 最终提示：打开浏览器控制台（F12）查看完整 console.log 输出
+// ================================================
+console.log('========================================');
+console.log('JavaScript 基础知识练习 - 所有练习已完成！');
+console.log('查看页面上的输出方框，获取每个知识点的演示结果');
+console.log('打开控制台（F12）可以查看原始 console.log 输出');
+console.log('========================================');
+</script>
+
+</body>
+</html>
